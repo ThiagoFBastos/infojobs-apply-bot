@@ -1,0 +1,13 @@
+Opções:
+    /pull
+        baixa as urls de empregos que foram encontrados em uma busca definida pelo arquivo params.json
+    /candidate
+        realiza a candidatura nos empregos armazenados no banco de dados
+    /view
+        descreve informações dos empregos armazenados no banco de dados
+    /clear
+        exclui todos os empregos do banco de dados
+    /quit
+        termina a execução do bot e encerra o programa
+    /help
+        mostra os comandos e suas descrições

@@ -1,0 +1,79 @@
+WorkPlaceType = {
+    'ONSITE': 1,
+    'REMOTE': 2,
+    'HYBRID': 3
+}
+
+PublicationTime = {
+    'TODAY': 1,
+    'LAST_THREE_DAYS': 2,
+    'LAST_WEEK': 3,
+    'LAST_FIFTEEN_DAYS': 4,
+    'LAST_MONTH': 5
+}
+
+Salary = {
+    'UP_TO_A_THOUSAND': 1,
+    'FROM_A_THOUSAND': 2,
+    'FROM_TWO_THOUSAND': 3,
+    'FROM_THREE_THOUSAND': 4,
+    'FROM_FOUR_THOUSAND': 5,
+    'FROM_FIVE_THOUSAND': 6,
+    'FROM_SIX_THOUSAND': 7,
+    'FROM_SEVEN_THOUSAND': 8,
+    'FROM_EIGHT_THOUSAND': 9,
+    'FROM_NIVE_THOUSAND': 10,
+    'FROM_TEN_THOUSAND': 11,
+    'TO_COMBINE': 12
+}
+
+ProfissionalArea = {
+    'ADMINISTRATION': 51,
+    'AGRICULTURE_LIVESTOCK_VETERINARY': 52,
+    'FOOD_GASTRONOMY': 92,
+    'ARCHITECTURE_DECORATION_DESIGN': 55,
+    'ART': 56,
+    'AUDIT': 57,
+    'ACCOUNTING_FINANCE_ECONOMICS': 66,
+    'CULTURE_LEISURE_ENTERTAINMENT': 67,
+    'EDUCATION_TEACHING_LANGUAGES': 69,
+    'ENGINEERING': 70,
+    'AESTHETICS': 71,
+    'HOSPITALITY_TOURISM': 72,
+    'FASHION': 93,
+    'QUALITY': 79,
+    'CHEMISTRY_PETROCHEMISTRY': 80,
+    'HUMAN_RESOURCES': 81,
+    'HEALTH': 82,
+    'SECURITY': 83
+}
+
+Contract = {
+    'CLT': 2,
+    'SELF_EMPLOYED': 16,
+    'SERVICE_PROVIDER': 17,
+    'COOPERATED': 18,
+    'YOUNG_APPRENTICE': 19,
+    'INTERNSHIP': 4,
+    'TEMPORARY': 6,
+    'TRAINEE': 15,
+    'OTHERS': 9
+}
+
+Journey = {
+    'FULL_TIME': 1,
+    'PARTIAL_MORNINGS': 2,
+    'PARTIAL_AFTERNOONS': 5,
+    'PARTIAL_NIGHTS': 6,
+    'NIGHT': 12
+}
+
+Pwd = {
+    'HEARING': 1,
+    'SPEECH': 2,
+    'PHYSICAL': 3,
+    'MENTAL': 4,
+    'VISUAL': 5,
+    'PSYCHOSOCIAL': 6,
+    'REHABILITATED': 7
+}
