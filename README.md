@@ -29,7 +29,7 @@ a partir de uma busca que foram armazenadas no banco de dados.
 ```
 {
     "keywords": "programador",
-    "city": "rio de janeiro",
+    "city": "rio janeiro",
     "state": "rj",
     "limit": 1000,
     "profissionalArea": ["ADMINISTRATION", "AGRICULTURE_LIVESTOCK_VETERINARY", "FOOD_GASTRONOMY"],
