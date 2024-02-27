@@ -96,7 +96,7 @@ while True:
 
         print(f'number of applied jobs = {non_applied[0]}')
     elif text == '/clear':
-        cur.execute("DELETE FROM jobs")
+        cur.execute("DELETE FROM jobs WHERE applied = 0")
         con.commit()
 
     elif text == '/quit':
