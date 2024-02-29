@@ -1,7 +1,6 @@
 
 # InfoJobs Apply Bot
-Armazena vagas encontradas a partir de uma busca em um banco de dados e realiza a candidatura em vagas que foram encontradas
-a partir de uma busca que foram armazenadas no banco de dados.
+Realiza a candidatura em vagas do infojobs a partir de parâmtros definidos em um arquivo json.
 
 ## Requisitos
 - Mozilla Firefox
@@ -113,5 +112,5 @@ a partir de uma busca que foram armazenadas no banco de dados.
     | FROM_SEVEN_THOUSAND | A partir de R$ 7000 |
     | FROM_EIGHT_THOUSAND | A partir de R$ 8000 |
     | FROM_NIVE_THOUSAND | A partir de R$ 9000 |
-    | FROM_TEN_THOUSAND | A partir de 10000 |
+    | FROM_TEN_THOUSAND | A partir de R$ 10000 |
     | TO_COMBINE | A combinar |
