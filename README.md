@@ -1,6 +1,6 @@
 
 # InfoJobs Apply Bot
-Realiza a candidatura em vagas do infojobs a partir de parâmtros definidos em um arquivo json.
+Realiza a candidatura em vagas do infojobs a partir de parâmetros definidos em um arquivo json.
 
 ## Requisitos
 - Mozilla Firefox
