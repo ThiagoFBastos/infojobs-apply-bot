@@ -107,7 +107,7 @@ while True:
             for line in f.readlines():
                 print(line, end = '')
     else:
-        print('comando inválido')
+        print('invalid command')
 
 bot.quit()
 con.close()
