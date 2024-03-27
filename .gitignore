@@ -6,4 +6,4 @@ utils/__pycache__
 infojobs/__pycache__
 infojobs/scraper/__pycache__
 geckodriver.log
-
+logs/log.txt

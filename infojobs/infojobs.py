@@ -45,6 +45,11 @@ class InfoJobs(object):
         options.add_argument('--disable-gpu')
         options.add_argument("--disable-dev-shm-usage")
         options.add_argument("--headless")
+        options.add_argument("--single-process")
+        options.add_argument("--no-cache")
+        options.add_argument("--disable-popup-blocking")
+        options.add_argument("--disable-notifications")
+        options.add_argument("--dns-prefetch-disable")
 
         self._driver = webdriver.Firefox(service = FirefoxService(GeckoDriverManager().install()), options = options)
 
@@ -116,7 +121,10 @@ class InfoJobs(object):
                     if self._driver.current_url == self._urls['CANDIDATE']:
                         break
 
-                agree_button = InfoJobsScraper.getAgreeButton(self._driver)
+                try:
+                    agree_button = InfoJobsScraper.getAgreeButton(self._driver)
+                except:
+                    agree_button = None
 
                 if agree_button is not None:
                     agree_button.click()
@@ -129,7 +137,10 @@ class InfoJobs(object):
 
                 button.click()
 
-                alert = InfoJobsScraper.getAlertLogin(self._driver)
+                try:
+                    alert = InfoJobsScraper.getAlertLogin(self._driver)
+                except:
+                    alert = None
 
                 if alert is not None:
                     button.click()
@@ -162,18 +173,14 @@ class InfoJobs(object):
             button.click()
             return True
         except Exception as ex:
-            logger.error(f'error when apply for job: {ex}')
+            logger.error(f'error when apply for job {url}: {ex}')
         return False
 
     def search_jobs(self, keywords, city = None, state = None, limit = -1, workplaceType = None, publicationTime = None, salary = None, profissionalArea = None, contract = None, journey = None, pwd = None):
         
         if city: city = city.replace(' ', '-')
 
-        page = 1
-        posts = []
-
-        while limit == -1 or len(posts) < limit:
-
+        def URL(page):
             params = {
                 'palabra': keywords,
                 'page': page
@@ -201,13 +208,25 @@ class InfoJobs(object):
                 params['tipocontrato'] = ','.join(map(str, [filters.Contract[c] for c in contract]))
 
             if city:
-                URL = f"{self._urls['BASE']}/vagas-de-emprego-em-" + '{}.aspx?' + urlencode(params)
+                url = f"{self._urls['BASE']}/vagas-de-emprego-em-" + '{}.aspx?' + urlencode(params)
                 location = f'{city},-{state}' if state else city
-                URL = URL.format(location)
+                url = url.format(location)
             else:
-                URL = f"{self._urls['BASE']}/empregos.aspx?{urlencode(params)}"
+                url = f"{self._urls['BASE']}/empregos.aspx?{urlencode(params)}"
 
-            page_source = requests.get(URL).content
+            return url
+
+        page = 1
+        posts = []
+
+        while limit == -1 or len(posts) < limit:
+
+            response = requests.get(URL(page))
+
+            if response.status_code != 200:
+                raise RuntimeError(f'Request failed with status {response.status_code}')
+
+            page_source = response.text
 
             results = InfoJobsScraper.getJobs(page_source)
 
